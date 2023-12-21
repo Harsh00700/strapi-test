@@ -68,12 +68,7 @@ module.exports = ({ env }) => {
         },
         schema: env('DATABASE_SCHEMA', 'public'),
       },
-      pool: {
-        min: env.int('DATABASE_POOL_MIN', 2),
-        max: env.int('DATABASE_POOL_MAX', 20), // Adjust the max value based on your needs
-        acquireTimeoutMillis: env.int('DATABASE_ACQUIRE_TIMEOUT', 60000), // Adjust the timeout as needed
-        idleTimeoutMillis: env.int('DATABASE_IDLE_TIMEOUT', 30000), // Adjust the timeout as needed
-      },
+      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
     },
     sqlite: {
       connection: {
